@@ -1,7 +1,8 @@
 package org.foo
 
 class Util {
-  Util() {}
+  def steps
+  Util(steps) {this.steps = steps}
   def test() {
     println "HELLO WORLD"
   }
