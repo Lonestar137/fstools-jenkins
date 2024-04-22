@@ -1,6 +1,7 @@
 package org.foo
 
 class Util {
+  Util() {}
   def test() {
     println "HELLO WORLD"
   }
