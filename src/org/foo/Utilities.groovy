@@ -1,5 +1,9 @@
 package org.foo
 
+def testing(){
+  println "TESTINTG"
+}
+
 // class Utilities implements Serializable {
 //   def steps
 //   Utilities(steps) {this.steps = steps}
@@ -13,6 +17,7 @@ package org.foo
 
 class Utilities {
   def steps
+  Utilities() {}
   def test() {
     println "HELLO WORLD"
   }
