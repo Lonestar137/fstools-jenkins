@@ -1,4 +1,11 @@
 package org.foo
+
+class Util {
+  def test() {
+    println "HELLO WORLD"
+  }
+}
+
 class Utilities implements Serializable {
   def steps
   Utilities(steps) {this.steps = steps}
