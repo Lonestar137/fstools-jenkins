@@ -17,7 +17,9 @@ def startPodmanContainer(String imageName, String arguments) {
     def command = 'podman run -d --rm ' + imageName + ' ' + arguments
     echo "${command}"
     def process = sh "${command}"
-    def containerId = process.text.trim()
+    echo "${process}"
+    def containerId = process.stdout.trim()
+    echo "${containerId}"
     return containerId
 }
 
