@@ -4,6 +4,7 @@ def withPodmanContainer(String imageName, String arguments, Closure closure) {
     
     try {
         // Execute the closure inside the container
+        sh "podman exec -it ${containerId} /bin/bash"
         closure.call()
     } finally {
         // Stop the Podman container
