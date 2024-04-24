@@ -15,6 +15,7 @@ def startPodmanContainer(String imageName, List<String> arguments) {
     // Implement the logic to start the Podman container here
     // For example:
     def command = 'podman run -d ' + imageName + ' ' + arguments
+    echo "${command}"
     def process = sh "${command}"
     process.waitFor()
     def containerId = process.text.trim()
