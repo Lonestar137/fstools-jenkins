@@ -1,4 +1,4 @@
-def withPodmanContainer(String imageName, List<String> arguments, Closure closure) {
+def withPodmanContainer(String imageName, String arguments, Closure closure) {
     // Start the Podman container
     def containerId = startPodmanContainer(imageName, arguments)
     
@@ -11,7 +11,7 @@ def withPodmanContainer(String imageName, List<String> arguments, Closure closur
     }
 }
 
-def startPodmanContainer(String imageName, List<String> arguments) {
+def startPodmanContainer(String imageName, String arguments) {
     // Implement the logic to start the Podman container here
     // For example:
     def command = 'podman run -d ' + imageName + ' ' + arguments
