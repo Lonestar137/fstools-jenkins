@@ -4,10 +4,12 @@ def withPodmanContainer(String imageName, String arguments, Closure closure) {
     
     try {
         // Execute the closure inside the container
-        sh "podman exec -it ${containerId} /bin/bash"
-        closure.call()
+        // sh "podman exec -it ${containerId} /bin/bash"
+        // closure.call()
+        sh "podman exec -i ${containerId} /bin/bash -c '${closure.command}' > /dev/null 2>&1 &"
     } finally {
         // Stop the Podman container
+        sh "exit"
         stopPodmanContainer(containerId)
     }
 }
