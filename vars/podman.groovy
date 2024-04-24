@@ -14,7 +14,7 @@ def withPodmanContainer(String imageName, String arguments, Closure closure) {
 def startPodmanContainer(String imageName, String arguments) {
     // Implement the logic to start the Podman container here
     // For example:
-    def command = 'podman run -d ' + imageName + ' ' + arguments
+    def command = 'podman run -d --rm ' + imageName + ' ' + arguments
     echo "${command}"
     def process = sh "${command}"
     process.waitFor()
@@ -25,7 +25,7 @@ def startPodmanContainer(String imageName, String arguments) {
 def stopPodmanContainer(String containerId) {
     // Implement the logic to stop the Podman container here
     // For example:
-    def command = ['podman', 'stop', containerId]
-    def process = command.execute()
+    def command = "podman stop " + containerId
+    def process = sh "${command}"
     process.waitFor()
 }
