@@ -17,7 +17,6 @@ def startPodmanContainer(String imageName, String arguments) {
     def command = 'podman run -d --rm ' + imageName + ' ' + arguments
     echo "${command}"
     def process = sh "${command}"
-    process.waitFor()
     def containerId = process.text.trim()
     return containerId
 }
@@ -27,5 +26,4 @@ def stopPodmanContainer(String containerId) {
     // For example:
     def command = "podman stop " + containerId
     def process = sh "${command}"
-    process.waitFor()
 }
